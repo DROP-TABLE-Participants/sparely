@@ -7,7 +7,7 @@ services:
       - data:/var/lib/postgresql/data
     env_file: .env
     ports:
-      - "50435:5432"
+      - "20431:5432"
 
   server:
     build: server/

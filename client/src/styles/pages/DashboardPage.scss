@@ -8,6 +8,22 @@
     box-sizing: border-box;
     padding: 0rem 1.25rem;
 
+    .heading-container {
+        box-sizing: border-box;
+        padding: 2rem 0;
+
+        .heading {
+            background: linear-gradient(183deg, #000 41.38%, rgba(0, 0, 0, 0.00) 97.34%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Hanken Grotesk';
+            font-size: 2.5rem;
+            padding-top: 1rem;
+            font-weight: 800;
+        }
+    }
+
     .donation-card-section {
         margin-bottom: 2rem;
     }

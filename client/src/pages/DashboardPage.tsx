@@ -12,6 +12,9 @@ export const DashboardPage = () => {
     return (
         <>
         <div className="dashboard-container">
+                <div className="heading-container">
+                    <span className="heading">Dashboard</span>
+                </div>
                 <Navigation />
                 <main>
                     <div className="donation-card-section">

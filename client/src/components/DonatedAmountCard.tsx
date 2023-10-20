@@ -1,11 +1,12 @@
 import React from "react";
+import '../styles/components/DonatedAmountCard.scss';
 
 
-export const DonatedAmountCard = () => {
+export const DonatedAmountCard = ({donatedAmount}: any) => {
     return (
-        <div className="card">
-            <h2>Donated Amount</h2>
-            <p>0.00</p>
+        <div className="donated-amount-card">
+            <h1 className='amount'>{donatedAmount}€</h1>
+            <p className='sub-heading'>Donated overall</p>
         </div>
     )
 }

@@ -4,11 +4,11 @@ import { UpdatePaymentDto } from './dto/update-payment.dto';
 
 @Injectable()
 export class PaymentsService {
-	donate(): void {
-		const paymentData = {
+	async donate(paymentData: CreatePaymentDto): Promise<{ message: string, url?: string}> {
+		const donationData = {
 			mode: "payment",
-			amount: 1063,
-			campaignId: "4c1616b0-1284-4b7d-8b89-9098e7ded2c4",
+			amount: paymentData.amount,
+			campaignId: paymentData.campaignId,
 			personId: "",
 			firstName: "Anonymous",
 			lastName: "Donor",
@@ -17,6 +17,23 @@ export class PaymentsService {
 			successUrl: "https://podkrepi.bg/bg//campaigns/donation/church-dimitar-solunski-resen?success=true",
 			cancelUrl: "https://podkrepi.bg/bg//campaigns/donation/church-dimitar-solunski-resen?success=false",
 			message: ""
+		};
+
+		console.log(JSON.stringify(donationData));
+
+		const response = await fetch("https://dev.podkrepi.bg/api/v1/donation/create-checkout-session", {
+			method: "POST",
+			body: JSON.stringify(donationData),
+			headers: {
+				"Content-Type": "application/json"
+			}
+		});
+
+		const { session: { url } } = await response.json();
+
+		return {
+			message: "success",
+			url: url,
 		};
 	}
 }

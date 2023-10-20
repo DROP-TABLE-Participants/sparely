@@ -1,10 +1,10 @@
 import React from "react";
 import "../styles/components/PaymentContainer.scss";
-
+import {PaymentContainerMethod} from "../styles/components/PaymentContainerMethod";
 
 interface PaymentMethod {
     imageUrl: string;
-    name: string;
+   
 }
 
 export const PaymentContainer = (method: PaymentMethod) => {
@@ -12,8 +12,7 @@ export const PaymentContainer = (method: PaymentMethod) => {
 
     return (
         <div className="payment-container">
-                <img src={method.imageUrl} alt={method.name} />
-                <button></button>
+                <PaymentContainerMethod src={method.imageUrl}/>
         </div>
     )
 }

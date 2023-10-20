@@ -4,21 +4,20 @@ import "../styles/pages/SettingsPage.scss";
 import { Navigation } from "../components/Navigation";
 
 interface PaymentMethod {
-    name: string;
     imageUrl: string;
 }
 
 const paymentMethods: PaymentMethod[] = [
     {
-        name: "Apple Pay",
+        
         imageUrl: "src/assets/apple-pay.png",
     },
     {
-        name: "PayPal",
+       
         imageUrl: "src/assets/paypal.png",
     },
     {
-        name: "Visa",
+      
         imageUrl: "src/assets/visa.png",
     },
     
@@ -29,17 +28,24 @@ export const SettingsPage = () => {
         <div className="settings-page">
             <div className="heading-wrapper">
                 <h1>Setting</h1>
-                
             </div>
-            <Navigation />
+            <div className="navigation-wrapper">
+                <Navigation />
+            </div>
+            <h2>Payment Methods</h2>
             <div className="payment-wrapper">
+            
                 {paymentMethods.map((method) => (
                     <PaymentContainer
-                        key={method.name}
-                        name={method.name}
+                        key={method.imageUrl}
                         imageUrl={method.imageUrl}
                     />
                 ))}
+            </div>
+
+            <div className="security-wrapper">
+                <h2>Security</h2>
+              
             </div>
         </div>
     );

@@ -6,29 +6,54 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: #FFF5EB;
 }
 
 .heading-wrapper{
     display: flex;
     box-sizing: border-box;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    vertical-align: middle;
     width: 100%;
     background-color: #FFF5EB;
-    padding: 4rem 0rem;
+    margin-left: 1.8rem;
 }
 
 .heading-wrapper h1{
     font-size: 2rem;
     font-weight: 700;
+    padding-top: 2rem;
+    
+}
+
+.navigation-wrapper{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    align-items: center;
+    vertical-align: middle;
+    width: 100%;
+    background-color: #FFF5EB;
+    margin-left: 1.8rem;
 }
 
 .payment-wrapper{
     display: flex;  
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: gray;
-}   
+    margin-top: 1.5rem;
+}
+
+ h2{
+    font-size: 1em;
+    font-weight: 600;
+    color: #5F5F5F;
+    font-family: "Hanken Grotesk";
+    align-self: flex-start;
+    margin-left: 1.8rem;
+    margin-top: 1.5rem;
+}

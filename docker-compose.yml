@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - data:/var/lib/postgresql/data
+    env_file: .env
+    ports:
+      - "50435:5432"
+
+  server:
+    build: server/
+    command: sh -c "npm run start:dev"
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server:/code
+      - /code/node_modules
+
+
+  client:
+    build: client/
+    command: sh -c "npm run dev"
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - server
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/code
+      - /code/node_modules
+    environment:
+      VITE_CLIENT_PORT: "5173"
+
+
+volumes:
+  data:

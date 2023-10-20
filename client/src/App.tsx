@@ -1,11 +1,11 @@
 import React from 'react'
 import {Route, Routes} from 'react-router-dom'
-import { CharityInfoPage } from './Pages/CharityInfoPage'
-import { DashboardPage } from './Pages/DashboardPage'
-import {SettingsPage} from './Pages/SettingsPage'
+import { CharityInfoPage } from './pages/CharityInfoPage'
+import { DashboardPage } from './pages/DashboardPage'
+import {SettingsPage} from './pages/SettingsPage'
 
-import './App.css'
-import { AuthPage } from './Pages/Auth'
+import './App.scss'
+import { AuthPage } from './pages/Auth'
 
 function App() {
   

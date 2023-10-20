@@ -1,12 +1,17 @@
 import React from "react";
+import '../styles/components/CharityCard.scss'
 
 
 export const CharityCard = ({charity}:any) => {
     return (
         <div className="charity-card">
-           <h1>{charity.heading}</h1>
-            <p>{charity.donatedAmount}</p>
-            <img src={charity.image} alt="" />
+            <div className="image-container">
+                <img src={charity.imageUrl} alt="" />
+            </div>
+            <div className="info-container">
+                <h1 className="charity-heading">{charity.heading}</h1>
+                <p className="donated-amount">{charity.donatedAmount}€</p>
+            </div>
         </div>
     )
 }

@@ -4,12 +4,8 @@ import {
   ExecutionContext,
   UnauthorizedException,
 } from '@nestjs/common';
-import { OAuth2Client } from 'google-auth-library';
 
-const client = new OAuth2Client(
-  process.env.GOOGLE_CLIENT_ID,
-  process.env.GOOGLE_CLIENT_SECRET,
-);
+import { GoogleOauthClient } from './google.client';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -23,13 +19,17 @@ export class AuthGuard implements CanActivate {
 
     const token = authHeader.split(' ')[1];
     const payload = await this.validateToken(token);
-    request.user = payload; // Attach payload to request
+
+    request.user = payload;
+    request.token = token;
+    request.userId = payload.sub;
+
     return true;
   }
 
   async validateToken(token: string): Promise<any> {
     try {
-      const ticket = await client.verifyIdToken({
+      const ticket = await GoogleOauthClient.verifyIdToken({
         idToken: token,
         audience: process.env.GOOGLE_CLIENT_ID,
       });

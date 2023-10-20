@@ -1,0 +1,10 @@
+@import '../imports.scss';
+
+.charities-slider {
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+    .charity-card {
+        display: block;
+    }
+}

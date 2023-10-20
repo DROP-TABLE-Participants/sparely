@@ -8,7 +8,7 @@ export class PaymentsController {
   constructor(private readonly paymentsService: PaymentsService) {}
 
   @Post("donate")
-  donate(@Body() paymentData: CreatePaymentDto): void {
-    console.log(paymentData);
+  donate(@Body() paymentData: CreatePaymentDto): Promise<{ message: string, url?: string}> {
+    return this.paymentsService.donate(paymentData);
   }
 }

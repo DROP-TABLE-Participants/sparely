@@ -1,27 +1,28 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { IComponent } from "@app/types/component";
-
-export interface ComponentState {
-	components: IComponent[];
+export interface ITokenState {
+  token: string | null;
 }
 
-const componentInitialState: ComponentState = {
-	components: [],
+const tokenInitialState: ITokenState = {
+  token: null,
 };
 
 const cartSlice = createSlice({
-	name: "component",
-	initialState: componentInitialState,
-	reducers: {
-		setStoredComponents: (state: ComponentState, action: PayloadAction<IComponent[]>): void => {
-			state.components = action.payload;
-		},
-	},
+  name: "token",
+  initialState: tokenInitialState,
+  reducers: {
+    setStoredToken: (
+      state: ITokenState,
+      action: PayloadAction<string | null>
+    ): void => {
+      state.token = action.payload;
+    },
+  },
 });
 
-const componentReducer = cartSlice.reducer;
+const tokenReducer = cartSlice.reducer;
 
-export const { setStoredComponents } = cartSlice.actions;
+export const { setStoredToken } = cartSlice.actions;
 
-export default componentReducer;
+export default tokenReducer;

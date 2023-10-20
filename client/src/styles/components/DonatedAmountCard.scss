@@ -7,18 +7,30 @@
     box-sizing: border-box;
     padding: 1rem 1rem;
     min-height: 11rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 
-    .amount {
-        color: black;
-        font-family: 'Hanken Grotesk';
-        font-size: 2.3rem;
-        font-weight: 700;
+    .left{
+
+        .amount {
+            color: black;
+            font-family: 'Hanken Grotesk';
+            font-size: 2.3rem;
+            font-weight: 700;
+        }
+        
+        .sub-heading{
+            color: black;
+            font-family: 'Hanken Grotesk';
+            font-size: 0.7rem;
+            font-weight: 400;
+        }
     }
-    
-    .sub-heading{
-        color: black;
-        font-family: 'Hanken Grotesk';
-        font-size: 0.7rem;
-        font-weight: 400;
+
+    .right {
+
     }
+
 }

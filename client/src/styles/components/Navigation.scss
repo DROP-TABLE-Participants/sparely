@@ -2,7 +2,10 @@
 .navbar {
     width: 100%;
     box-sizing: border-box;
+<<<<<<< HEAD
     padding-top: 2.5rem;
+=======
+>>>>>>> ad82f97ca31a98178d75a76be10b384b1d65d2b6
     padding-bottom: 1rem;
 
     .buttons-container {
@@ -18,15 +21,19 @@
             font-weight: 600;
             color: black;
             padding: .5rem 1.2rem;
+            margin-right: 10px;
         }
 
         .button-dashboard {
             background: #B8FF81;
-            margin-right: 10px;
         }
 
         .button-settings {
-            background: #C4BCF9
+            background: #D8E3F3
+        }
+
+        .button-charities {
+            background: #C4BCF9;
         }
     }
 }

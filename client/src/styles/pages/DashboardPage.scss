@@ -8,38 +8,6 @@
     box-sizing: border-box;
     padding: 0rem 1.25rem;
 
-    .navbar {
-        width: 100%;
-        box-sizing: border-box;
-        padding-top: 5rem;
-        padding-bottom: 1rem;
-
-        .buttons-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-
-            .button {
-                border-radius: 20px;
-                font-size: 1rem;
-                font-family: 'Hanken Grotesk';
-                font-weight: 600;
-                color: black;
-                padding: .5rem 1.2rem;
-            }
-
-            .button-dashboard {
-                background: #B8FF81;
-                margin-right: 10px;
-            }
-
-            .button-settings {
-                background: #C4BCF9
-            }
-        }
-    }
-
     .donation-card-section {
         margin-bottom: 2rem;
     }

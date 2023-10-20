@@ -1,7 +1,7 @@
 import React from "react";
 import { PaymentContainer } from "../components/PaymentContainer";
 import "../styles/pages/SettingsPage.scss";
-
+import { Navigation } from "../components/Navigation";
 
 interface PaymentMethod {
     name: string;
@@ -29,7 +29,9 @@ export const SettingsPage = () => {
         <div className="settings-page">
             <div className="heading-wrapper">
                 <h1>Setting</h1>
+                
             </div>
+            <Navigation />
             <div className="payment-wrapper">
                 {paymentMethods.map((method) => (
                     <PaymentContainer

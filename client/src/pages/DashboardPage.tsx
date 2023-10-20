@@ -2,6 +2,7 @@ import React from "react";
 import {DonatedAmountCard} from "../components/DonatedAmountCard";
 import { CharityCardsList } from "../components/CharityCardsList";
 import '../styles/pages/DashboardPage.scss';
+import {Navigation} from "../components/Navigation";
 
 
 export const DashboardPage = () => {
@@ -11,12 +12,7 @@ export const DashboardPage = () => {
     return (
         <>
         <div className="dashboard-container">
-            <nav className="navbar">
-                <div className="buttons-container">
-                    <div className="button button-dashboard">Dashboard</div>
-                    <div className="button button-settings">Settings</div>
-                </div>
-            </nav>
+                <Navigation />
                 <main>
                     <div className="donation-card-section">
                         <DonatedAmountCard donatedAmount= {donatedAmount} />

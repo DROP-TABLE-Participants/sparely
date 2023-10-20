@@ -9,9 +9,7 @@ export const DonatedAmountCard = ({donatedAmount}: any) => {
                 <h1 className='amount'>{donatedAmount}€</h1>
                 <p className='sub-heading'>Donated overall</p>
             </div>
-            <div className="right">
-                <img src="../../public/sparely-logo.svg" alt="" />
-            </div>
+                <img src="src/assets/donation-amount-card-detail.svg" alt="" />
         </div>
     )
 }

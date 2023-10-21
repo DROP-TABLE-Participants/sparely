@@ -2,7 +2,7 @@ import { Controller, Get, Param, UseGuards } from '@nestjs/common';
 import { CampaignsService } from './campaigns.service';
 import { Campaign } from './dto/campaign.dto';
 import { ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { ApiResponse, ApiTags } from '@nestjs/swagger';
+
 
 @ApiTags('Campaigns')
 @Controller('campaigns')
@@ -20,7 +20,7 @@ export class CampaignsController {
   @Get(':slug')
   @ApiParam({
     name: 'slug',
-    type: String,
+    type: String, 
     required: true,
     description: 'Id of the campaign',
   })

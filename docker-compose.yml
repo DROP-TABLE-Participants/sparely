@@ -8,6 +8,10 @@ services:
     env_file: .env
     ports:
       - "20431:5432"
+    environment:
+      - POSTGRES_DB=sparely
+      - POSTGRES_USER=sparely
+      - POSTGRES_PASSWORD=sparely
 
   server:
     build: server/

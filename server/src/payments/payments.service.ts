@@ -11,7 +11,7 @@ export class PaymentsService {
 
   async donate(
     paymentData: CreatePaymentDto,
-    user: TokenPayload,
+    userId: string,
   ): Promise<{ message: string; url?: string }> {
     const donationData = {
       mode: 'payment',
@@ -46,7 +46,7 @@ export class PaymentsService {
 
     const payment = new Payment();
 
-    payment.userId = user.sub;
+    payment.userId = userId;
     payment.campaignId = paymentData.campaignId;
     payment.amount = paymentData.amount;
 

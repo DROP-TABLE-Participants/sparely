@@ -17,7 +17,9 @@ export class PaymentsController {
     @Body() paymentData: CreatePaymentDto,
     @Req() req: RequestWithAuth
   ): Promise<{ message: string; url?: string }> {
-    return this.paymentsService.donate(paymentData, req.user);
+    const userId = req.headers['authorization'] .split(' ')[1] as string;
+
+    return this.paymentsService.donate(paymentData, userId);
   }
 
   @ApiResponse({ status: 200, description: 'Payments by User' })
@@ -26,6 +28,8 @@ export class PaymentsController {
       @Req() req: Request
   ): Promise<{ amount:  number }> {
     const userId = req.headers['authorization'] .split(' ')[1] as string;
+
+    console.log(userId);
 
     const amount = await this.paymentsService.getTotalAmountDonated(userId);
 

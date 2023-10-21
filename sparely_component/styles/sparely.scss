@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.button-style {
+    width: 100%;
+    min-width: 50px;
+    max-width: 250px;
+    min-height: 8vh;
+    max-height: 50vh;
+    position: 'relative';
+    background: white;
+    border-radius: 25px;
+    border: 5px #0B735A solid;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: .3s;
+
+    &:hover {
+        border: 5px #0d8e70 solid;
+        transition: .25s;
+    }
+}
+
+.button-text-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button-text {
+    color: #0B735A;
+    font-size: 1em;
+    font-family: Hanken Grotesk, -apple-system, Roboto, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.logo {
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    width: 48px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+.charityScroller {
+    background-color: rgb(225, 225, 225);
+    height: 25vh;
+    overflow: auto;
+    width: 90%;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.callToActionButton {
+    //
+}

@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "tsc && vite build",
+    "build": "vite build",
+    "start": "npm run build && serve dist -l 5173",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "generate-api": "java -jar swagger-codegen-cli.jar generate -i http://localhost:3000/api-json -l typescript-axios -o src/api/ && clear-api.sh"
   },
   "dependencies": {
+    "vite": "^4.4.5",
     "@react-oauth/google": "^0.11.1",
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.5.1",
@@ -19,6 +21,7 @@
     "react-redux": "^8.1.3",
     "react-router-dom": "^6.17.0",
     "redux-persist": "^6.0.0",
+    "serve": "^14.2.1",
     "styled-components": "^6.1.0",
     "swiper": "^10.3.1"
   },
@@ -32,7 +35,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "sass": "^1.69.4",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
-  }
+    "typescript": "^5.0.2"
+    }
 }

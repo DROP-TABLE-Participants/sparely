@@ -21,17 +21,13 @@ export class PaymentsController {
   }
 
   @ApiResponse({ status: 200, description: 'Payments by User' })
-  @Post(':userId')
-  @ApiParam({
-    name: 'userId',
-    type: String, 
-    required: true,
-    description: 'Id of the user',
-  })
+  @Post()
   async getTotalAmountDonated(
-      @Param() params: { userId: string }
+      @Req() req: Request
   ): Promise<{ amount:  number }> {
-    const amount = await this.paymentsService.getTotalAmountDonated(params.userId);
+    const userId = req.headers['authorization'] .split(' ')[1] as string;
+
+    const amount = await this.paymentsService.getTotalAmountDonated(userId);
 
     return { amount };
   }

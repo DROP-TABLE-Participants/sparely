@@ -65,6 +65,8 @@ export class PaymentsService {
         .select("SUM(amount)")
         .getRawOne() as { sum: number | null};
 
+    console.log(result);
+
     return (result.sum ?? 0) / 1000;
   }
 }

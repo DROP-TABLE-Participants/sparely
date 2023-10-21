@@ -2,7 +2,8 @@ FROM node:18
 
 WORKDIR /code/
 
-COPY package*.json ./
+COPY package.json package.json
+COPY package-lock.json package-lock.json
 
 ENV NPM_CONFIG_CACHE=/code/.npm
 

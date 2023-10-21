@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { PaymentMethodCard } from "../components/PaymentMethodCard";
 import "../styles/pages/SettingsPage.scss";
 import { Navigation } from "../components/Navigation";
@@ -24,6 +24,8 @@ const paymentMethods: PaymentMethod[] = [
 ];
 
 export const SettingsPage = () => {
+    const [showAddPayment, setShowAddPayment] = useState(false);
+
     return (
         <div className="settings-page-container">
             <div className="settings-page-content">
@@ -44,7 +46,7 @@ export const SettingsPage = () => {
                             />
                         ))}
 
-                        <div className="add-payment-method-card">
+                        <div className="add-payment-method-card" onClick={() => setShowAddPayment(true)}> 
                             <span>
                                 +
                             </span>
@@ -53,6 +55,15 @@ export const SettingsPage = () => {
                 </div>
 
             </div>
+
+            {showAddPayment && ( 
+                <div className="add-payment-popup-overlay">
+                    <div className="add-payment-popup">
+                        <h2 className="heading">Add Payment Method</h2>
+                        <button className="close-button" onClick={() => setShowAddPayment(false)}>Close</button> 
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

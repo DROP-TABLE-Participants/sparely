@@ -1,51 +1,57 @@
 import React from "react";
-import { PaymentContainer } from "../components/PaymentContainer";
+import { PaymentMethodCard } from "../components/PaymentMethodCard";
 import "../styles/pages/SettingsPage.scss";
 import { Navigation } from "../components/Navigation";
 
 interface PaymentMethod {
-    imageUrl: string;
+    method: string;
 }
 
 const paymentMethods: PaymentMethod[] = [
     {
         
-        imageUrl: "src/assets/apple-pay.png",
+        method: "googlePay",
     },
     {
        
-        imageUrl: "src/assets/paypal.png",
+        method: "paypal",
     },
     {
       
-        imageUrl: "src/assets/visa.png",
+        method: "visa",
     },
     
 ];
 
 export const SettingsPage = () => {
     return (
-        <div className="settings-page">
-            <div className="heading-wrapper">
-                <h1>Setting</h1>
-            </div>
-            <div className="navigation-wrapper">
-                <Navigation />
-            </div>
-            <h2>Payment Methods</h2>
-            <div className="payment-wrapper">
-            
-                {paymentMethods.map((method) => (
-                    <PaymentContainer
-                        key={method.imageUrl}
-                        imageUrl={method.imageUrl}
-                    />
-                ))}
-            </div>
+        <div className="settings-page-container">
+            <div className="settings-page-content">
+                <div className="heading-container">
+                    <span className="heading">Settings</span>
+                </div>
 
-            <div className="security-wrapper">
-                <h2>Security</h2>
-              
+                <Navigation />
+
+                <div className="payment-methods-section">
+
+                    <h2 className="heading">Payment Methods</h2>
+                    <div className="payments-grid">
+                    
+                        {paymentMethods.map((method) => (
+                            <PaymentMethodCard
+                                method={method.method}
+                            />
+                        ))}
+
+                        <div className="add-payment-method-card">
+                            <span>
+                                +
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     );

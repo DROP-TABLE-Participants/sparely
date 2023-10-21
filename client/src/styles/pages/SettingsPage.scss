@@ -1,42 +1,73 @@
 @import '../imports.scss';
 
 
-.settings-page{
+.settings-page-container{
+    width: 100%;
+    height: 100vh;
+    background: #FFF5EB;
+
     box-sizing: border-box;
+    padding: 0rem 1.25rem;
+    overflow-y: hidden;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #FFF5EB;
-}
 
-.heading-wrapper{
-    display: flex;
-    box-sizing: border-box;
-    justify-content: flex-start;
-    align-items: center;
-    vertical-align: middle;
-    width: 100%;
-    background-color: #FFF5EB;
-    margin-left: 1.8rem;
-}
+    .settings-page-content {
+        width: 100%;
+        max-width: 50rem;
 
-.heading-wrapper h1{
-    font-size: 2rem;
-    font-weight: 700;
-    padding-top: 2rem;
+        .heading-container {
+            box-sizing: border-box;
+            padding: 2rem 0;
     
+            .heading {
+                background: linear-gradient(183deg, #000 41.38%, rgba(0, 0, 0, 0.00) 97.34%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-family: 'Hanken Grotesk';
+                font-size: 2.5rem;
+                padding-top: 1rem;
+                font-weight: 800;
+            }
+        }
+
+        .payment-methods-section {
+            .heading {
+                color: #5F5F5F;
+                font-size: 1rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+
+            .payments-grid {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.2rem;
+                margin-bottom: 15px;
+
+                .add-payment-method-card {
+                    display: flex;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 6rem;
+                    min-height: 4rem;
+                    border: 2px solid #7A7A7A;
+                    border-radius: 0.5rem;
+
+                    span {
+                        font-size: 2rem;
+                        color: #7A7A7A;
+                    }
+                }
+            }
+        }
+    }
+
 }
 
-.navigation-wrapper{
-    display: flex;
-    box-sizing: border-box;
-    justify-content: flex-start;
-    align-items: center;
-    vertical-align: middle;
-    width: 100%;
-    background-color: #FFF5EB;
-    margin-left: 1.8rem;
-}
 
 .payment-wrapper{
     display: flex;  
@@ -45,15 +76,5 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    margin-top: 1.5rem;
-}
-
- h2{
-    font-size: 1em;
-    font-weight: 600;
-    color: #5F5F5F;
-    font-family: "Hanken Grotesk";
-    align-self: flex-start;
-    margin-left: 1.8rem;
     margin-top: 1.5rem;
 }

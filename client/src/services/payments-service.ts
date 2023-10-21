@@ -1,6 +1,7 @@
-import { PaymentsApi } from "../api";
+import { CreatePaymentDto, PaymentsApi } from "../api";
 import { AxiosResponse } from "axios";
 import { WebApiService } from "./web-api-service";
+import storageService from "./storage-service";
 
 
 export class PaymentsService extends WebApiService {
@@ -13,7 +14,11 @@ export class PaymentsService extends WebApiService {
   }
 
   public async getUserDonations(): Promise<AxiosResponse<void, any>> {
-    return await this.paymentsApi.paymentsControllerGetTotalAmountDonated(this.generateHeader());
+    return await this.paymentsApi.paymentsControllerGetTotalAmountDonated(storageService.retrieveIdToken(), this.generateHeader());
+  }
+
+  public async makeDonation(amount: number, campaignId: string): Promise<AxiosResponse<void, any>> {
+    return await this.paymentsApi.paymentsControllerDonate({amount, campaignId} as CreatePaymentDto, this.generateHeader());
   }
 
 }

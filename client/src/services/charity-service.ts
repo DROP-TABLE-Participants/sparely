@@ -31,6 +31,7 @@ export class CampaignsService extends WebApiService {
   public async getCampaignById(campaignId: string): Promise<AxiosResponse<void, any>> {
     return await this.campaignsApi.campaignsControllerFindOne(campaignId, this.generateHeader());
   }
+
 }
 
 const campaignService = new CampaignsService();

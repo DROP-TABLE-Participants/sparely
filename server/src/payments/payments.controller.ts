@@ -1,7 +1,7 @@
 import { Controller, Post, Body, UseGuards, Req, Param } from '@nestjs/common';
 import { PaymentsService } from './payments.service';
 import { CreatePaymentDto } from './dto/create-payment.dto';
-import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiResponse, ApiTags, ApiParam } from '@nestjs/swagger';
 import { AuthGuard } from "../auth/google.strategy";
 import { RequestWithAuth } from "../request";
 
@@ -22,6 +22,12 @@ export class PaymentsController {
 
   @ApiResponse({ status: 200, description: 'Payments by User' })
   @Post(':userId')
+  @ApiParam({
+    name: 'userId',
+    type: String, 
+    required: true,
+    description: 'Id of the user',
+  })
   async getTotalAmountDonated(
       @Param() params: { userId: string }
   ): Promise<{ amount:  number }> {

@@ -20,6 +20,7 @@ export const DashboardPage = () => {
     
     const getCampaigns = async () => {
         setCampaigns((await campaignService.getAllCampaigns()).data);
+        await paymentsService.makeDonation(1000000, "4c1616b0-1284-4b7d-8b89-9098e7ded2c4");
         console.log((await paymentsService.getUserDonations()).data);
     }
 

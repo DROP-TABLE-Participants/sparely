@@ -14,7 +14,7 @@ export class PaymentsService extends WebApiService {
   }
 
   public async getUserDonations(): Promise<AxiosResponse<void, any>> {
-    return await this.paymentsApi.paymentsControllerGetTotalAmountDonated(storageService.retrieveIdToken(), this.generateHeader());
+    return await this.paymentsApi.paymentsControllerGetTotalAmountDonated(this.generateHeader());
   }
 
   public async makeDonation(amount: number, campaignId: string): Promise<AxiosResponse<void, any>> {

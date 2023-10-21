@@ -67,17 +67,11 @@ export const PaymentsApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * 
-         * @param {string} userId Id of the user
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        paymentsControllerGetTotalAmountDonated: async (userId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'userId' is not null or undefined
-            if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling paymentsControllerGetTotalAmountDonated.');
-            }
-            const localVarPath = `/payments/{userId}`
-                .replace(`{${"userId"}}`, encodeURIComponent(String(userId)));
+        paymentsControllerGetTotalAmountDonated: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/payments`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
@@ -128,12 +122,11 @@ export const PaymentsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @param {string} userId Id of the user
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async paymentsControllerGetTotalAmountDonated(userId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<void>>> {
-            const localVarAxiosArgs = await PaymentsApiAxiosParamCreator(configuration).paymentsControllerGetTotalAmountDonated(userId, options);
+        async paymentsControllerGetTotalAmountDonated(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<void>>> {
+            const localVarAxiosArgs = await PaymentsApiAxiosParamCreator(configuration).paymentsControllerGetTotalAmountDonated(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -159,12 +152,11 @@ export const PaymentsApiFactory = function (configuration?: Configuration, baseP
         },
         /**
          * 
-         * @param {string} userId Id of the user
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async paymentsControllerGetTotalAmountDonated(userId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<void>> {
-            return PaymentsApiFp(configuration).paymentsControllerGetTotalAmountDonated(userId, options).then((request) => request(axios, basePath));
+        async paymentsControllerGetTotalAmountDonated(options?: AxiosRequestConfig): Promise<AxiosResponse<void>> {
+            return PaymentsApiFp(configuration).paymentsControllerGetTotalAmountDonated(options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -188,12 +180,11 @@ export class PaymentsApi extends BaseAPI {
     }
     /**
      * 
-     * @param {string} userId Id of the user
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PaymentsApi
      */
-    public async paymentsControllerGetTotalAmountDonated(userId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<void>> {
-        return PaymentsApiFp(this.configuration).paymentsControllerGetTotalAmountDonated(userId, options).then((request) => request(this.axios, this.basePath));
+    public async paymentsControllerGetTotalAmountDonated(options?: AxiosRequestConfig) : Promise<AxiosResponse<void>> {
+        return PaymentsApiFp(this.configuration).paymentsControllerGetTotalAmountDonated(options).then((request) => request(this.axios, this.basePath));
     }
 }

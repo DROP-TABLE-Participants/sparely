@@ -16,6 +16,18 @@ export class CampaignsService extends WebApiService {
     return await this.campaignsApi.campaignsControllerFindAll(this.generateHeader());
   }
 
+//   public async getAllCampaigns(): Promise<Campaign[]> {
+//     const campaigns: Campaign[] = [];
+
+//     const campaignsSnapshot: any = (await this.campaignsApi.campaignsControllerFindAll(this.generateHeader())).data;
+
+//     campaignsSnapshot.forEach(campaign => {
+//        campaigns.push(CampaignScheme.parse(campaign.data())) 
+//     });
+
+//     return campaigns;
+//   }
+
   public async getCampaignById(campaignId: string): Promise<AxiosResponse<void, any>> {
     return await this.campaignsApi.campaignsControllerFindOne(campaignId, this.generateHeader());
   }

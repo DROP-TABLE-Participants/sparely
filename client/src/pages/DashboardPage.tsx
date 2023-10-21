@@ -15,11 +15,7 @@ export const DashboardPage = () => {
     useEffect(()=>{
         getCampaigns();
     }, [])
-
-    useEffect(() => {
-        console.log(campaigns);
-    }, [campaigns])
-
+    
     const getCampaigns = async () => {
         setCampaigns((await campaignService.getAllCampaigns()).data);
     }

@@ -5,23 +5,28 @@ import { useNavigate } from "react-router-dom";
 
 
 interface Charity {
-    id: number;
-    imageUrl: string;
-    heading: string;
-    donatedAmount: number;
+    slug: string;
+    title: string;
+    category: string;
+    reachedAmount: number;
+    logo: string;
+    summary : {
+        reachedAmount: number;
+    }
+
 }
 
 export const CharityCard = ({ charity }: { charity: Charity }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="charity-card" onClick={()=>{navigate(`/charity/${charity.id}`)}}>
+        <div className="charity-card" onClick={()=>{navigate(`/charity/${charity.slug}`)}}>
             <div className="image-container">
-                <img src={charity.imageUrl} alt="" />
+                <img src={charity.logo} alt="" />
             </div>
             <div className="info-container">
-                <h1 className="charity-heading">{charity.heading}</h1>
-                <p className="donated-amount">{charity.donatedAmount}€</p>
+                <h1 className="charity-heading">{charity.title}</h1>
+                <p className="donated-amount">{charity.summary.reachedAmount}€</p>
             </div>
         </div>
     )

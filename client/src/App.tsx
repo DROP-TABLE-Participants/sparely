@@ -19,7 +19,7 @@ function App() {
         <Route path="/charity/:id" element={<CharityInfoPage />} />
         <Route path="/charities" element={<CharitiesPage />} />
         <Route path="/auth" element={<AuthPage/>} />
-      </Routes> 
+      </Routes>   
     </>
   )
 }

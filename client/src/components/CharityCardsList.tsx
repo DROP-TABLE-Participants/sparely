@@ -15,7 +15,7 @@ export const CharityCardsList = ({charities}:any) => {
                 breakpoints={{
                     "@0.00": {
                         slidesPerView: 1.1,
-                        spaceBetween: 30,
+                        spaceBetween: 40,
                       },
                       "@0.70": {
                         slidesPerView: 2,

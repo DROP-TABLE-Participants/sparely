@@ -3,6 +3,7 @@ import '../styles/components/CharityCard.scss'
 
 
 
+
 interface Charity {
     slug: string;
     title: string;

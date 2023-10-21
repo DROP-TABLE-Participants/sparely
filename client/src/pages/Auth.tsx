@@ -4,6 +4,7 @@ import { setStoredToken } from "../stores/tokens";
 import { useTokens } from "../stores/selectors";
 import { useEffect, useState } from "react";
 import storageService from "../services/storage-service";
+import { useNavigate } from "react-router-dom";
 
 interface IUser {
   id: string;
@@ -18,6 +19,7 @@ export const AuthPage = () => {
   const dispatch = useDispatch();
   const userToken = useTokens();
   const [userInfo, setUserInfo] = useState<IUser | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserInfo = async () => {
@@ -61,6 +63,7 @@ export const AuthPage = () => {
           onSuccess={(credentialResponse) => {
             dispatch(setStoredToken(credentialResponse.credential as string));
             storageService.saveIdToken(credentialResponse.credential as string);
+            navigate('/dashboard')
           }}
           onError={() => {
             console.log("Login Failed");

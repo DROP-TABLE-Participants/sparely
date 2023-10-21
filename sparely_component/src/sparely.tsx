@@ -17,12 +17,37 @@ export interface props {
 export function Sparely({amount} : props) {
     const [showCampaigns, setShowCampaigns] = useState(false);
     const [showDonateAmount, setShowDonateAmount] = useState(false);
-    let priceDifference = (amount % 1)? (Math.ceil(amount) - amount).toFixed(2) : 1.00;
+    const [fetched, setFetched] = useState(false);
+    const [campaigns, setCampaigns] = useState([]);
+    const [selectedCampaignId, setSelectedCampaignId] = useState(null);
+    let priceDifference: any = (amount % 1)? (Math.ceil(amount) - amount).toFixed(2) : 1.00;
+    const donateOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ campaignId: selectedCampaignId, amount: (priceDifference*100)})
+    };
+
+    function fetchEvents() {
+        if(!fetched){
+            fetch('http://localhost:3000/campaigns')
+            .then(response => response.json())
+            .then(data => setCampaigns(data))
+            .catch(error => console.error(error));
+    
+            setFetched(true);
+        }
+    }
+
+    function donate() {
+        fetch('http://localhost:3000/payments/donate', donateOptions)
+        .then(response => response.json())
+        .then(data => console.log("success"));
+    }
 
     return (
     <>
         <div className="container">
-            <div className="button-style" onClick={() => setShowCampaigns(true)}>
+            <div className="button-style" onClick={() => {setShowCampaigns(true);fetchEvents();}}>
                 <div className="button-info-container">
                     {!showCampaigns && <h1 className="button-text">Donate spare change</h1>}
                     {showCampaigns && !showDonateAmount && <h1 className="charity-text">Choose charity</h1>}
@@ -36,9 +61,13 @@ export function Sparely({amount} : props) {
                 </div>
                 {showCampaigns && !showDonateAmount &&
                 <div className="charityScroller">
-                    <div className="item">
-                    
-                    </div>
+                    {campaigns.map((charity: any)=>{
+                        return (
+                        // <div className="charity-list-item" onClick={()=>{window.open(`https://dev.podkrepi.bg/campaigns/${charity.slug}`)}}>
+                        <div className="charity-list-item" onClick={()=>{setSelectedCampaignId(charity.id)}}>
+                            <p>{charity.title.substring(0, 25)}</p>
+                        </div>)
+                    })}
                 </div>
                 }
 
@@ -54,7 +83,7 @@ export function Sparely({amount} : props) {
                 {showCampaigns &&
                 <div className="callToActionButton">
                      {showCampaigns && !showDonateAmount &&<p className="callToActionText" onClick={() => setShowDonateAmount(true)}>Continue</p>}
-                     {showCampaigns && showDonateAmount &&<p className="callToActionText" onClick={() => console.log("good job")}>Donate</p>}
+                     {showCampaigns && showDonateAmount &&<p className="callToActionText" onClick={() => donate()}>Donate</p>}
                 </div>
                 }
             </div>

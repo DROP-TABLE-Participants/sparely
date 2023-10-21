@@ -20,7 +20,7 @@ export const CharityCard = ({ charity }: { charity: Charity }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="charity-card" onClick={()=>{navigate(`/charity/${charity.slug}`)}}>
+        <div className="charity-card" onClick={()=>{navigate(`https://dev.podkrepi.bg/campaigns/${charity.slug}`)}}>
             <div className="image-container">
                 <img src={charity.logo} alt="" />
             </div>

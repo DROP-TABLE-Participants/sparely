@@ -102,15 +102,36 @@
   }
   
   .close-button {
-    background-color: #f00;
-    color: white;
+    background-color: #B8FF81;
+    color: #000;
+    font-size: 1rem;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    border: 1px solid #000;
   }
   
   .close-button:hover {
-    background-color: #c00; 
+    background-color: #B8FF81; 
+  }
+
+  .add-payment-popup ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .add-payment-popup li {
+    margin-bottom: 10px;
+  }
+  
+  .add-payment-popup label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .add-payment-popup input[type="radio"] {
+    margin-right: 10px;
   }
   

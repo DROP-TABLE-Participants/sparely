@@ -1,0 +1,44 @@
+@import '../imports.scss';
+
+.page-wrapper{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFF5EB;
+    height: 100vh;
+    width: 100%;
+}
+
+.heading-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5rem 0;
+    flex-direction: column;
+}
+
+.text-wrapper{
+    margin-top: 1rem;
+}
+
+.text-wrapper span{
+    color: #0B735A;
+    font-family: Hanken Grotesk;
+    font-size: 3.17856rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.text-wrapper span:last-child{
+    color: #47CE55;
+}
+
+.google-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}

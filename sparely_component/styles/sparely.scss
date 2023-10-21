@@ -2,14 +2,14 @@
 
 .button-style {
     width: 100%;
-    min-width: 50px;
-    max-width: 250px;
-    min-height: 8vh;
+    min-width: 260px;
+    max-width: 23vw;
+    min-height: 6vh;
     max-height: 500vh;
     position: 'relative';
     background: white;
     border-radius: 25px;
-    border: 5px #0B735A solid;
+    border: 3px #0B735A solid;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
     transition: .3s;
 
     &:hover {
-        border: 5px #0d8e70 solid;
+        border: 3px #0d8e70 solid;
         transition: .25s;
     }
 }
@@ -29,13 +29,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 13px;
-    margin-bottom: 13px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .button-text {
     color: #0B735A;
-    font-size: 1em;
+    font-size: 1.2em;
     font-family: Hanken Grotesk, -apple-system, Roboto, Helvetica, sans-serif;
     font-weight: 600;
 }
@@ -64,12 +64,11 @@
   }
 
 .charityScroller {
-    background-color: rgb(225, 225, 225);
+    max-width: 250px;
     height: 25vh;
     overflow: auto;
     width: 90%;
     margin-bottom: 15px;
-    border-radius: 12px;
 }
 
 .callToActionButton {
@@ -113,4 +112,15 @@
     margin-bottom: 25px;
     color: #979797;
     font-size: .8em;
+}
+
+.charity-list-item {
+    background-color: #EFEFEF;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 60px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }

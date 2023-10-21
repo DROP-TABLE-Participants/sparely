@@ -9,7 +9,7 @@
   box-sizing: border-box;
   height: 100vh;
   width: 100%;
-  background-color: #FFF5EB;
+  background-color: #FFF8EC;
 }
 
 .heading-container {    
@@ -17,10 +17,7 @@
     padding: 2rem 0;
 
     .heading {
-        background: linear-gradient(183deg, #000 41.38%, rgba(0, 0, 0, 0.00) 97.34%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #0B735A;
         font-family: 'Hanken Grotesk';
         font-size: 2.5rem;
         padding-top: 1rem;

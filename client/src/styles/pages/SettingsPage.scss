@@ -4,7 +4,7 @@
 .settings-page-container{
     width: 100%;
     height: 100vh;
-    background: #FFF5EB;
+    background: #FFF8EC;
 
     box-sizing: border-box;
     padding: 0rem 1.25rem;
@@ -21,10 +21,7 @@
             padding: 2rem 0;
     
             .heading {
-                background: linear-gradient(183deg, #000 41.38%, rgba(0, 0, 0, 0.00) 97.34%);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                color: #0B735A;
                 font-family: 'Hanken Grotesk';
                 font-size: 2.5rem;
                 padding-top: 1rem;

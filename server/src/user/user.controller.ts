@@ -1,8 +1,13 @@
 import { Controller, Get, Req, UseGuards } from '@nestjs/common';
+import { ApiOAuth2, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from 'src/auth/google.strategy';
 
+@ApiOAuth2(['email', 'profile'], 'oauth2')
+@ApiTags('Users')
 @Controller('users')
 export class UserController {
+  @ApiResponse({ status: 200, description: 'User profile' })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
   @UseGuards(AuthGuard)
   @Get('profile')
   async login(@Req() request): Promise<any> {

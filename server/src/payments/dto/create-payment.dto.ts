@@ -1,11 +1,14 @@
-import { IsString, IsNumber, IsNotEmpty } from "class-validator";
+import { ApiProperty } from '@nestjs/swagger';
+import { IsString, IsNumber, IsNotEmpty } from 'class-validator';
 
 export class CreatePaymentDto {
-	@IsNumber()
-	@IsNotEmpty()
-	amount: number;
+  @ApiProperty()
+  @IsNumber()
+  @IsNotEmpty()
+  amount: number;
 
-	@IsString()
-	@IsNotEmpty()
-	campaignId: string;
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  campaignId: string;
 }

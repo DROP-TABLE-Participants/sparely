@@ -1,6 +1,5 @@
 import React from "react";
-import "../styles/components/PaymentContainer.scss";
-import {PaymentContainerMethod} from "../styles/components/PaymentContainerMethod";
+import { PaymentContainerMethod } from "../styles/components/PaymentContainerMethod.tsx";
 
 interface PaymentMethod {
     imageUrl: string;
@@ -8,8 +7,6 @@ interface PaymentMethod {
 }
 
 export const PaymentContainer = (method: PaymentMethod) => {
-    
-
     return (
         <div className="payment-container">
                 <PaymentContainerMethod src={method.imageUrl}/>

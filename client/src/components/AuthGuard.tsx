@@ -13,7 +13,7 @@ const AuthGuard = ({ element, ...rest }: AuthGuardProps) => {
   return isUserLoggedIn ? (
     <React.Fragment {...rest} >{element}</React.Fragment>
   ) : (
-    <Navigate to="/auth" replace />
+    <Navigate to="/" replace />
   );
 };
 

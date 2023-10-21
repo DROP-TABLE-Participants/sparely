@@ -13,5 +13,6 @@ datasource db {
 model Donation {
   id          Int     @default(autoincrement()) @id
   campaignId  String
-  name        String?
+  userId      String
+  amount      Int
 }

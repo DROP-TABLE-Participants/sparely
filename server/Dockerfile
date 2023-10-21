@@ -11,4 +11,4 @@ RUN npm install -g @nestjs/cli
 
 COPY . .
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start:dev"]

@@ -34,7 +34,7 @@ export const CharitiesPage = () => {
 
                     {campaigns.map((charity: any)=>{
                         return (
-                        <div className="charity-list-item" onClick={()=>{window.open(`https://podkrepi.bg/campaigns/${charity.slug}`)}}>
+                        <div className="charity-list-item" onClick={()=>{window.open(`https://dev.podkrepi.bg/campaigns/${charity.slug}`)}}>
                         <div className="charity-img"><img src={`${charity.logo}`} alt="" /></div>
                         <div className="charity-info">
                                 <div className="charity-heading">{charity.title}</div>

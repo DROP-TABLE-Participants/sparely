@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "tsc && vite build",
+    "build": "vite build",
+    "start": "npm run build && serve dist -l 5173",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -17,6 +18,7 @@
     "react-redux": "^8.1.3",
     "react-router-dom": "^6.17.0",
     "redux-persist": "^6.0.0",
+    "serve": "^14.2.1",
     "styled-components": "^6.1.0",
     "swiper": "^10.3.1"
   },

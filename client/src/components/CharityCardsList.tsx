@@ -12,10 +12,24 @@ export const CharityCardsList = ({charities}:any) => {
     return (
         <>
             <Swiper
-                slidesPerView={1.05}
-                spaceBetween={30}
+                breakpoints={{
+                    "@0.00": {
+                        slidesPerView: 1.1,
+                        spaceBetween: 40,
+                      },
+                      "@0.70": {
+                        slidesPerView: 2,
+                        spaceBetween: 40,
+                      },
+                }}
                 className="charities-slider">
 
+                {charities.map((charity:any) => {
+                    return <SwiperSlide><CharityCard charity={charity} /></SwiperSlide>
+                })}
+                {charities.map((charity:any) => {
+                    return <SwiperSlide><CharityCard charity={charity} /></SwiperSlide>
+                })}
                 {charities.map((charity:any) => {
                     return <SwiperSlide><CharityCard charity={charity} /></SwiperSlide>
                 })}

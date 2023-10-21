@@ -12,6 +12,7 @@ export const DashboardPage = () => {
     return (
         <>
         <div className="dashboard-container">
+            <div className="dashboard-content">
                 <div className="heading-container">
                     <span className="heading">Dashboard</span>
                 </div>
@@ -26,6 +27,7 @@ export const DashboardPage = () => {
                         <CharityCardsList charities={charities} />
                     </div>
                 </main>
+            </div>
             </div>
         </>
     )

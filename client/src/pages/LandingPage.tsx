@@ -1,5 +1,6 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.svg";
+import bgDetails from "../assets/landing-bg-details.svg";
 import "../styles/pages/LandingPage.scss";
 import { AuthPage } from "../pages/Auth";
 
@@ -12,12 +13,14 @@ export const LandingPage = () => {
                     <span>Spare</span>
                     <span>ly</span>
                 </div>
-                <p></p>
+                <p>Donate to charities seemlessly.</p>
             </div>
 
             <div className="google-wrapper">
                 <AuthPage/>
             </div>
+
+            <img src={bgDetails} className="background-details" alt="" />
         </div>
     );
 }

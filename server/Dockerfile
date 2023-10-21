@@ -11,7 +11,7 @@ RUN npm install
 RUN npm install ts-node -g
 RUN npm install -g @nestjs/cli
 
-RUN chown -R node:node /code/
+RUN mkdir -p node_modules/.cache && chmod -R 777 node_modules/.cache
 
 COPY . .
 

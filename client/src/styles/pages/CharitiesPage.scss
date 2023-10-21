@@ -50,7 +50,6 @@
                 padding: 1rem 2rem;
                 width: 100%;
                 display: grid;
-                grid-template-rows: 1fr;
                 grid-template-columns: 1fr 2fr 1fr;
                 gap: 8px;
                 align-items: center;
@@ -75,7 +74,9 @@
                 }
     
                 .charity-info {
-                
+                    white-space:nowrap; 
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     .charity-heading {
                         color: #000;
                         font-family: 'Hanken Grotesk';
@@ -87,6 +88,7 @@
                         overflow: hidden;
                         text-overflow: ellipsis;
                         max-width: 20rem;
+                        width: 100%;
                     }
     
                     .charity-subheading {

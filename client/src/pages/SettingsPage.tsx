@@ -60,6 +60,20 @@ export const SettingsPage = () => {
                 <div className="add-payment-popup-overlay">
                     <div className="add-payment-popup">
                         <h2 className="heading">Add Payment Method</h2>
+                        <ul>
+                            <li>
+                                <label>
+                                        <input type="radio" name="paymentMethod" value="creditCard" />
+                                        Credit Card
+                                </label>
+                            </li>
+                        <li>
+                            <label>
+                                    <input type="radio" name="paymentMethod" value="paypal" />
+                                        PayPal
+                            </label>
+                        </li>
+                    </ul>
                         <button className="close-button" onClick={() => setShowAddPayment(false)}>Close</button> 
                     </div>
                 </div>

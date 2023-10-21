@@ -4,6 +4,7 @@ import { CharityCardsList } from "../components/CharityCardsList";
 import '../styles/pages/DashboardPage.scss';
 import {Navigation} from "../components/Navigation";
 import campaignService from "../services/charity-service";
+import paymentsService from "../services/payments-service";
 
 
 export const DashboardPage = () => {
@@ -12,12 +13,14 @@ export const DashboardPage = () => {
     const [campaigns, setCampaigns]:any = useState([]);
     const donatedAmount = 325.24;
 
+
     useEffect(()=>{
         getCampaigns();
     }, [])
     
     const getCampaigns = async () => {
         setCampaigns((await campaignService.getAllCampaigns()).data);
+        console.log((await paymentsService.getUserDonations()).data);
     }
 
     return (

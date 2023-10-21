@@ -65,6 +65,39 @@ export const PaymentsApiAxiosParamCreator = function (configuration?: Configurat
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentsControllerGetTotalAmountDonated: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/payments/{userId}`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions :AxiosRequestConfig = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            const query = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                query.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.params) {
+                query.set(key, options.params[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(query)).toString();
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -82,6 +115,18 @@ export const PaymentsApiFp = function(configuration?: Configuration) {
          */
         async paymentsControllerDonate(body: CreatePaymentDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<void>>> {
             const localVarAxiosArgs = await PaymentsApiAxiosParamCreator(configuration).paymentsControllerDonate(body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async paymentsControllerGetTotalAmountDonated(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<void>>> {
+            const localVarAxiosArgs = await PaymentsApiAxiosParamCreator(configuration).paymentsControllerGetTotalAmountDonated(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -105,6 +150,14 @@ export const PaymentsApiFactory = function (configuration?: Configuration, baseP
         async paymentsControllerDonate(body: CreatePaymentDto, options?: AxiosRequestConfig): Promise<AxiosResponse<void>> {
             return PaymentsApiFp(configuration).paymentsControllerDonate(body, options).then((request) => request(axios, basePath));
         },
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async paymentsControllerGetTotalAmountDonated(options?: AxiosRequestConfig): Promise<AxiosResponse<void>> {
+            return PaymentsApiFp(configuration).paymentsControllerGetTotalAmountDonated(options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -124,5 +177,14 @@ export class PaymentsApi extends BaseAPI {
      */
     public async paymentsControllerDonate(body: CreatePaymentDto, options?: AxiosRequestConfig) : Promise<AxiosResponse<void>> {
         return PaymentsApiFp(this.configuration).paymentsControllerDonate(body, options).then((request) => request(this.axios, this.basePath));
+    }
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PaymentsApi
+     */
+    public async paymentsControllerGetTotalAmountDonated(options?: AxiosRequestConfig) : Promise<AxiosResponse<void>> {
+        return PaymentsApiFp(this.configuration).paymentsControllerGetTotalAmountDonated(options).then((request) => request(this.axios, this.basePath));
     }
 }

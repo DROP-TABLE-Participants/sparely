@@ -57,11 +57,11 @@ export const CampaignsApiAxiosParamCreator = function (configuration?: Configura
         },
         /**
          * 
-         * @param {string} slug Id of the campaign
+         * @param {any} slug Id of the campaign
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        campaignsControllerFindOne: async (slug: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        campaignsControllerFindOne: async (slug: any, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'slug' is not null or undefined
             if (slug === null || slug === undefined) {
                 throw new RequiredError('slug','Required parameter slug was null or undefined when calling campaignsControllerFindOne.');
@@ -117,11 +117,11 @@ export const CampaignsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @param {string} slug Id of the campaign
+         * @param {any} slug Id of the campaign
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async campaignsControllerFindOne(slug: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<void>>> {
+        async campaignsControllerFindOne(slug: any, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<void>>> {
             const localVarAxiosArgs = await CampaignsApiAxiosParamCreator(configuration).campaignsControllerFindOne(slug, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -147,11 +147,11 @@ export const CampaignsApiFactory = function (configuration?: Configuration, base
         },
         /**
          * 
-         * @param {string} slug Id of the campaign
+         * @param {any} slug Id of the campaign
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async campaignsControllerFindOne(slug: string, options?: AxiosRequestConfig): Promise<AxiosResponse<void>> {
+        async campaignsControllerFindOne(slug: any, options?: AxiosRequestConfig): Promise<AxiosResponse<void>> {
             return CampaignsApiFp(configuration).campaignsControllerFindOne(slug, options).then((request) => request(axios, basePath));
         },
     };
@@ -175,12 +175,12 @@ export class CampaignsApi extends BaseAPI {
     }
     /**
      * 
-     * @param {string} slug Id of the campaign
+     * @param {any} slug Id of the campaign
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CampaignsApi
      */
-    public async campaignsControllerFindOne(slug: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<void>> {
+    public async campaignsControllerFindOne(slug: any, options?: AxiosRequestConfig) : Promise<AxiosResponse<void>> {
         return CampaignsApiFp(this.configuration).campaignsControllerFindOne(slug, options).then((request) => request(this.axios, this.basePath));
     }
 }

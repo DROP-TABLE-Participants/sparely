@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { setStoredToken } from "../stores/tokens";
 import { useTokens } from "../stores/selectors";
 import { useEffect, useState } from "react";
+import storageService from "../services/storage-service";
 
 interface IUser {
   id: string;
@@ -59,6 +60,7 @@ export const AuthPage = () => {
         <GoogleLogin
           onSuccess={(credentialResponse) => {
             dispatch(setStoredToken(credentialResponse.credential as string));
+            storageService.saveIdToken(credentialResponse.credential as string);
           }}
           onError={() => {
             console.log("Login Failed");

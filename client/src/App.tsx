@@ -17,10 +17,10 @@ function App() {
       <Routes>
         <Route path="/" element={ <LandingPage/>} />
         <Route path="/auth" element={<AuthPage />} />
-        <Route path="/dashboard" element={ <AuthGuard element={<DashboardPage />} />} />
-        <Route path="/settings" element={ <AuthGuard element={<SettingsPage />} /> } />
-        <Route path="/charity/:id" element={ <AuthGuard element={<CharityInfoPage />} /> } />
-        <Route path="/charities" element={ <AuthGuard element={<CharitiesPage />} /> } />
+        <Route path="/dashboard" element={ <DashboardPage />} />
+        <Route path="/settings" element={ <SettingsPage />} />
+        <Route path="/charity/:id" element={ <CharityInfoPage />}/>
+        <Route path="/charities" element={ <CharitiesPage />} />
         <Route path="*" element={<h1>404</h1>} />
       </Routes>
     </>

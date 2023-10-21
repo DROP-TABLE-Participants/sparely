@@ -8,33 +8,49 @@
     box-sizing: border-box;
     padding: 0rem 1.25rem;
     overflow-y: hidden;
+    display: flex;
+    justify-content: center;
 
-    .heading-container {
-        box-sizing: border-box;
-        padding: 2rem 0;
-
-        .heading {
-            background: linear-gradient(183deg, #000 41.38%, rgba(0, 0, 0, 0.00) 97.34%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'Hanken Grotesk';
-            font-size: 2.5rem;
-            padding-top: 1rem;
-            font-weight: 800;
+    .dashboard-content {
+        width: 100%;
+        max-width: 50rem;
+        .heading-container {
+            box-sizing: border-box;
+            padding: 2rem 0;
+    
+            .heading {
+                background: linear-gradient(183deg, #000 41.38%, rgba(0, 0, 0, 0.00) 97.34%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-family: 'Hanken Grotesk';
+                font-size: 2.5rem;
+                padding-top: 1rem;
+                font-weight: 800;
+            }
         }
-    }
+    
+        .donation-card-section {
+            margin-bottom: 2rem;
+        }
+    
+        .charities-section {
+            .heading {
+                color: #5F5F5F;
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+        }
 
-    .donation-card-section {
-        margin-bottom: 2rem;
     }
+    
+}
 
-    .charities-section {
-        .heading {
-            color: #5F5F5F;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+@media only screen and (min-width: 600px) {
+    .dashboard-container {
+        .dashboard-content {
+            overflow: hidden;
         }
     }
 }

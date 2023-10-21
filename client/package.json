@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "start": "npm run build && serve dist -l 5173",
+    "start": "vite build && serve dist -l 5173",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "generate-api": "java -jar swagger-codegen-cli.jar generate -i http://localhost:3000/api-json -l typescript-axios -o src/api/ && clear-api.sh"
@@ -24,14 +24,15 @@
     "styled-components": "^6.1.0",
     "swiper": "^10.3.1",
     "vite": "^4.4.5",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "vite": "^4.5.0",
+    "@vitejs/plugin-react": "^4.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
-    "@vitejs/plugin-react": "^4.0.3",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",

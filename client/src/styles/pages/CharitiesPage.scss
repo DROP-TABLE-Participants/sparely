@@ -7,72 +7,103 @@
 
     box-sizing: border-box;
     padding: 0rem 1.25rem;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
 
-    .heading-container {
-        box-sizing: border-box;
-        padding: 2rem 0;
-
-        .heading {
-            background: linear-gradient(183deg, #000 41.38%, rgba(0, 0, 0, 0.00) 97.34%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'Hanken Grotesk';
-            font-size: 2.5rem;
-            padding-top: 1rem;
-            font-weight: 800;
-        }
-    }   
-
-    .subheading {
-        color: #5F5F5F;
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-    }
-
-    .charities-list-container {
+    .charities-page-content {
         width: 100%;
-        height: fit-content;
-        background: white;;
-        border-radius: 1.125rem;
+        max-width: 50rem;
+        padding-bottom: 2rem;
 
-        .charity-list-item {
+        .heading-container {
             box-sizing: border-box;
-            padding: 1rem 0rem;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-evenly;
-            
-            border-bottom: 1px #EBEBEB solid;
-
-            .charity-img {
-                background: #D9D9D9;
-                width: 3.8rem;
-                height: 3.8rem;
-                border-radius: 50%;
+            padding: 2rem 0;
+    
+            .heading {
+                background: linear-gradient(183deg, #000 41.38%, rgba(0, 0, 0, 0.00) 97.34%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-family: 'Hanken Grotesk';
+                font-size: 2.5rem;
+                padding-top: 1rem;
+                font-weight: 800;
             }
-
-            .charity-info {
-                .charity-heading {
-                    color: #000;
-                    font-family: 'Hanken Grotesk';
-                    font-size: 1rem;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: normal;
+        }   
+    
+        .subheading {
+            color: #5F5F5F;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+    
+        .charities-list-container {
+            width: 100%;
+            height: fit-content;
+            background: white;;
+            border-radius: 1.125rem;
+    
+            .charity-list-item {
+                box-sizing: border-box;
+                padding: 1rem 2rem;
+                width: 100%;
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr 2fr 1fr;
+                gap: 8px;
+                align-items: center;
+                
+                border-bottom: 1px #EBEBEB solid;
+    
+                .charity-img {
+                    background: #D9D9D9;
+                    width: 3.8rem;
+                    height: 3.8rem;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    position: relative;
+    
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        object-fit: cover;
+                    }
                 }
-
-                .charity-subheading {
-                    color: #000;
-                    font-family: 'Hanken Grotesk';
-                    font-size: 0.9em;
-                    font-style: normal;
-                    font-weight: 500;
-                    line-height: normal;
+    
+                .charity-info {
+                
+                    .charity-heading {
+                        color: #000;
+                        font-family: 'Hanken Grotesk';
+                        font-size: 1rem;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        white-space:nowrap; 
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 20rem;
+                    }
+    
+                    .charity-subheading {
+                        color: #000;
+                        font-family: 'Hanken Grotesk';
+                        font-size: 0.9em;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        white-space:nowrap; 
+                        max-width: 12rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
         }
     }
+
 }

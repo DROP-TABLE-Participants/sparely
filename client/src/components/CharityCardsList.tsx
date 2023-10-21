@@ -27,12 +27,6 @@ export const CharityCardsList = ({charities}:any) => {
                 {charities.map((charity:any) => {
                     return <SwiperSlide><CharityCard charity={charity} /></SwiperSlide>
                 })}
-                {charities.map((charity:any) => {
-                    return <SwiperSlide><CharityCard charity={charity} /></SwiperSlide>
-                })}
-                {charities.map((charity:any) => {
-                    return <SwiperSlide><CharityCard charity={charity} /></SwiperSlide>
-                })}
                 
             </Swiper>
         </>

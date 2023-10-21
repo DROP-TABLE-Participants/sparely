@@ -63,6 +63,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-sass": "^1.12.21",
     "size-limit": "^9.0.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.6.2",

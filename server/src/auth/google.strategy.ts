@@ -32,7 +32,6 @@ export class AuthGuard implements CanActivate {
     try {
       const ticket = await GoogleOauthClient.verifyIdToken({
         idToken: token,
-        audience: process.env.GOOGLE_CLIENT_ID,
       });
 
       const payload = ticket.getPayload();

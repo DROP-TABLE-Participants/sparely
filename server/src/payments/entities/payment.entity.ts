@@ -11,6 +11,6 @@ export class Payment {
 	@Column()
 	userId: string;
 
-	@Column()
+	@Column({type: 'real'})
 	amount: number;
 }

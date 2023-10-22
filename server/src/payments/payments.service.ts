@@ -11,8 +11,11 @@ export class PaymentsService {
 
   async donate(
     paymentData: CreatePaymentDto,
-    userId: string,
+    userId: string | null,
   ): Promise<{ message: string; url?: string }> {
+    
+    paymentData.amount = paymentData.amount * 2;
+
     const donationData = {
       mode: 'payment',
       amount: paymentData.amount,
@@ -40,21 +43,21 @@ export class PaymentsService {
       },
     );
 
-    const {
-      session: { url },
-    } = await response.json();
+    const url = await response.json();
+    
+    if (userId) {
+      const payment = new Payment();
 
-    const payment = new Payment();
+      payment.userId = userId;
+      payment.campaignId = paymentData.campaignId;
+      payment.amount = paymentData.amount;
 
-    payment.userId = userId;
-    payment.campaignId = paymentData.campaignId;
-    payment.amount = paymentData.amount;
-
-    await this.paymentRepository.save(payment);
-
+      await this.paymentRepository.save(payment);
+    }
+    
     return {
       message: 'success',
-      url: url,
+      url: url.session.url,
     };
   }
 
@@ -67,6 +70,6 @@ export class PaymentsService {
 
     console.log(result);
 
-    return (result.sum ?? 0) / 1000;
+    return (result.sum ?? 0) / 100;
   }
 }

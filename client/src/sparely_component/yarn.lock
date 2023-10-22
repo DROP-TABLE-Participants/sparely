@@ -1753,6 +1753,11 @@
     "prop-types" "^15.6.1"
     "react-lifecycles-compat" "^3.0.4"
 
+"@react-oauth/google@^0.11.1":
+  "integrity" "sha512-tywZisXbsdaRBVbEu0VX6dRbOSL2I6DgY97woq5NMOOOz+xtDsm418vqq+Vx10KMtra3kdHMRMf0hXLWrk2RMg=="
+  "resolved" "https://registry.npmjs.org/@react-oauth/google/-/google-0.11.1.tgz"
+  "version" "0.11.1"
+
 "@rollup/plugin-babel@^5.1.0":
   "integrity" "sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q=="
   "resolved" "https://registry.npmjs.org/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz"

@@ -39,7 +39,7 @@ export const DashboardPage = () => {
                         <DonatedAmountCard donatedAmount= {donatedAmount} />
                     </div>
 
-                    <Sparely amount={42.12} successUrl={""} failureUrl={""} firstName={""} lastName={""} email={""} phone={""} googleAuth={false} googleClientId={""} googleClientSecret={""}/>
+                    <Sparely amount={42.12} successUrl={""} failureUrl={""} googleClientId={"134533434102-4r2keh0b79hl22dkvpqa0k8q2k7mfler.apps.googleusercontent.com"} />
 
                     <div className="charities-section">
                         <h1 className="heading">Selected campaigns</h1>

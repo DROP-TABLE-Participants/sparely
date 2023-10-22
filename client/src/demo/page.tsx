@@ -87,7 +87,7 @@ export default function DemoPage() {
 						</div>
 
 						<div className="row">
-							<Sparely amount={67.90} successUrl={""} failureUrl={""} googleClientId={"134533434102-4r2keh0b79hl22dkvpqa0k8q2k7mfler.apps.googleusercontent.com"} />
+							<Sparely amount={67} successUrl={""} failureUrl={""} googleClientId={"134533434102-4r2keh0b79hl22dkvpqa0k8q2k7mfler.apps.googleusercontent.com"} />
 
 							<div className="col-100 mrg-top-35 text-center">
 								<button className="action orange-button button" id="buy">

@@ -1,9 +1,8 @@
-import { Controller, Post, Body, UseGuards, Req } from '@nestjs/common';
+import { Controller, Post, Body, UseGuards, Req, Get } from '@nestjs/common';
 import { PaymentsService } from './payments.service';
 import { CreatePaymentDto } from './dto/create-payment.dto';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from '../auth/google.strategy';
-import { RequestWithAuth } from '../request';
 
 @UseGuards(AuthGuard)
 @ApiTags('Payments')
@@ -15,19 +14,17 @@ export class PaymentsController {
   @Post('donate')
   donate(
     @Body() paymentData: CreatePaymentDto,
-    @Req() req: Request,
+    @Req() req,
   ): Promise<{ message: string; url?: string }> {
-    const userId = req.headers['authorization'].split(' ')[1] as string;
+    const userId = req.userId;
 
     return this.paymentsService.donate(paymentData, userId);
   }
 
   @ApiResponse({ status: 200, description: 'Payments by User' })
-  @Post()
-  async getTotalAmountDonated(
-    @Req() req: Request,
-  ): Promise<{ amount: number }> {
-    const userId = req.headers['authorization'].split(' ')[1] as string;
+  @Get()
+  async getTotalAmountDonated(@Req() req): Promise<{ amount: number }> {
+    const userId = req.userId;
 
     const amount = await this.paymentsService.getTotalAmountDonated(userId);
 

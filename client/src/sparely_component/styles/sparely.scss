@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.button-style {
+    width: 100%;
+    min-width: 260px;
+    max-width: 16vw;
+    min-height: 6vh;
+    max-height: 500vh;
+    position: 'relative';
+    background: white;
+    border-radius: 25px;
+    border: 3px #0B735A solid;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: .3s;
+
+    &:hover {
+        border: 3px #0d8e70 solid;
+        transition: .25s;
+    }
+}
+
+.button-info-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button-text {
+    color: #0B735A;
+    font-size: 1.2em;
+    font-family: Hanken Grotesk, -apple-system, Roboto, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.charity-text {
+    color: #0B735A;
+    font-size: 1.3em;
+    font-family: Hanken Grotesk, -apple-system, Roboto, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.donate-text {
+    color: #0B735A;
+    font-size: 1.3em;
+    font-family: Hanken Grotesk, -apple-system, Roboto, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.logo {
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    width: 48px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+.charityScroller {
+    max-width: 250px;
+    height: 25vh;
+    overflow: auto;
+    width: 90%;
+    margin-bottom: 15px;
+}
+
+.callToActionButton {
+    background-color: #0B735A;
+    width: 90%;
+    min-height: 5vh;
+    max-height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.callToActionText {
+    font-size: 1.2em;
+    color: white;
+    font-family: Hanken Grotesk, -apple-system, Roboto, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.donateAmountContainer {
+    background-color: rgb(225, 225, 225);
+    height: 7vh;
+    overflow: auto;
+    width: 70%;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donationAmount {
+    color: #0B735A;
+    font-size: 1.3em;
+    font-family: Hanken Grotesk, -apple-system, Roboto, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+.totalAmount {
+    margin-bottom: 25px;
+    color: #979797;
+    font-size: .8em;
+}
+
+.charity-list-item {
+    background-color: #EFEFEF;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 60px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}

@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Campaign } from "./dto/campaign.dto";
+import fetch from "node-fetch";
+
 
 @Injectable()
 export class CampaignsService {

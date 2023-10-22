@@ -16,7 +16,7 @@ import { Configuration } from "./configuration";
 // @ts-ignore
 import globalAxios, { AxiosRequestConfig, AxiosInstance } from 'axios';
 
-export const BASE_PATH = "http://localhost:3000/".replace(/\/+$/, "");
+export const BASE_PATH = "https://sparely-server-sparely.apps.cluster-9kktz.gcp.redhatworkshops.io/".replace(/\/+$/, "");
 
 /**
  *

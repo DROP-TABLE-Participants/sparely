@@ -4,6 +4,7 @@ import { TokenPayload } from "google-auth-library";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Payment } from "./entities/payment.entity";
 import { Repository } from "typeorm";
+import fetch from "node-fetch";
 
 @Injectable()
 export class PaymentsService {

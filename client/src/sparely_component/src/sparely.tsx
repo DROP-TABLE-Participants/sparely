@@ -36,7 +36,7 @@ export function Sparely({ amount, googleClientId }: props) {
 
     const fetchEvents = () => {
         if (!fetched) {
-            fetch('http://localhost:3000/campaigns')
+            fetch('https://sparely-server-sparely.apps.cluster-9kktz.gcp.redhatworkshops.io/campaigns')
                 .then(response => response.json())
                 .then(data => setCampaigns(data))
                 .catch(error => console.error(error));
@@ -54,7 +54,7 @@ export function Sparely({ amount, googleClientId }: props) {
         let request: Response = new Response();
 
         if (userToken) {
-            request = await fetch("http://localhost:3000/payments/donate", {
+            request = await fetch("https://sparely-server-sparely.apps.cluster-9kktz.gcp.redhatworkshops.io/payments/donate", {
                 headers: {
                     Authorization: `Bearer ${userToken}`,
                     'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ export function Sparely({ amount, googleClientId }: props) {
             });
 
         } else {
-            request = await fetch("http://localhost:3000/payments/donateAnonymously", {
+            request = await fetch("https://sparely-server-sparely.apps.cluster-9kktz.gcp.redhatworkshops.io/payments/donateAnonymously", {
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -87,7 +87,7 @@ export function Sparely({ amount, googleClientId }: props) {
     }
 
     const fetchUserInfo = async (userToken: string) => {
-        const request = await fetch("http://localhost:3000/users/profile", {
+        const request = await fetch("https://sparely-server-sparely.apps.cluster-9kktz.gcp.redhatworkshops.io/users/profile", {
             headers: {
                 Authorization: `Bearer ${userToken}`,
             },

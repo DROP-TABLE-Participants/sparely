@@ -23,7 +23,7 @@ export const AuthPage = () => {
 
   useEffect(() => {
     const fetchUserInfo = async () => {
-      const request = await fetch("http://localhost:3000/users/profile", {
+      const request = await fetch("https://sparely-server-sparely.apps.cluster-9kktz.gcp.redhatworkshops.io/users/profile", {
         headers: {
           Authorization: `Bearer ${userToken}`,
         },

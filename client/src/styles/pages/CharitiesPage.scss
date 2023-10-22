@@ -41,6 +41,16 @@
             height: fit-content;
             background: white;;
             border-radius: 1.125rem;
+            overflow: hidden;
+
+            .selected {
+                background: white;
+            }
+
+            .deselected {
+                background: #f0eae4;
+            }
+            
     
             .charity-list-item {
                 box-sizing: border-box;

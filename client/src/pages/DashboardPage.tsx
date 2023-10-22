@@ -22,7 +22,7 @@ export const DashboardPage = () => {
     }
 
     const getDonatedAmount = async () => {
-        setDonatedAmount((await paymentsService.getUserDonations()).data.amount)
+        setDonatedAmount((await paymentsService.getUserDonations()).data.amount);
     }
 
     return (

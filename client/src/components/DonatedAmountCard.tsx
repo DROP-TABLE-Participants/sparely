@@ -9,7 +9,7 @@ export const DonatedAmountCard = ({donatedAmount}: any) => {
                 <h1 className='amount'>{donatedAmount}€</h1>
                 <p className='sub-heading'>Donated overall</p>
             </div>
-                <img src="src/assets/donation-amount-card-detail.svg" alt="" />
+                <img src="/donation-amount-card-detail.svg" alt="" />
         </div>
     )
 }

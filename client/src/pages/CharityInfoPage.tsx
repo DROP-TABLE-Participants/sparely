@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigation } from "../components/Navigation";
 import '../styles/pages/CharityInfoPage.scss';
-import link from '../assets/link-icon.png';
+import link from '/link-icon.png';
 
 
 

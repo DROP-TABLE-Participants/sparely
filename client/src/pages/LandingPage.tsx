@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../assets/logo.svg";
-import bgDetails from "../assets/landing-bg-details.svg";
+import logo from "/logo.svg";
+import bgDetails from "/landing-bg-details.svg";
 import "../styles/pages/LandingPage.scss";
 import { AuthPage } from "../pages/Auth";
 

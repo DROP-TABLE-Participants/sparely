@@ -2,7 +2,7 @@
 
 .button-style {
     width: 100%;
-    min-width: 260px;
+    min-width: 300px;
     max-width: 16vw;
     min-height: 6vh;
     max-height: 500vh;
@@ -38,6 +38,7 @@
     font-size: 1.2em;
     font-family: Hanken Grotesk, -apple-system, Roboto, Helvetica, sans-serif;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .charity-text {
@@ -121,6 +122,27 @@
     margin-bottom: 10px;
     height: 60px;
     display: flex;
-    justify-content: left;
+    justify-content:space-between;
     align-items: center;
+}
+
+
+.charity-list-text {
+    color: #2e2e2e;
+    font-size: 1.1em;
+    font-family: Hanken Grotesk, -apple-system, Roboto, Helvetica, sans-serif;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.charity-list-arrow {
+    height: 100%;
+    background-color: #e0e0e0;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    width: 20%;
 }

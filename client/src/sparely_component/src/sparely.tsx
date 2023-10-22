@@ -106,7 +106,6 @@ export function Sparely({ amount, googleClientId }: props) {
                         {!showCampaigns &&
                             <div>
                                 <h1 className="button-text">Donate spare change</h1>
-                                <br />
                                 <GoogleLogin
                                     onSuccess={async (credentialResponse: any) => {
                                         setUserToken(credentialResponse.credential);
@@ -131,13 +130,14 @@ export function Sparely({ amount, googleClientId }: props) {
                     {showCampaigns && !showDonateAmount &&
                         <div className="charityScroller">
                             {campaigns.filter(campaign => campaign.state === "active").map((charity: any) => {
+                                const isItemSelected = charity.id === selectedCampaignId;
+                                const borderStyle = isItemSelected ? "2px solid #0B735A" : "1px solid transparent";
                                 return (
-                                    // <div className="charity-list-item" onClick={()=>{window.open(`https://dev.podkrepi.bg/campaigns/${charity.slug}`)}}>
-                                    <div className="charity-list-item" onClick={() => {
+                                    <div className="charity-list-item" style={{ border: borderStyle }} onClick={() => {
                                         setSelectedCampaignId(charity.id);
-                                        setShowDonateAmount(true);
                                     }}>
-                                        <p>{charity.title.substring(0, 25)}</p>
+                                        <p className="charity-list-text">{charity.title.substring(0, 18)}...</p>
+                                        <div className="charity-list-arrow" onClick={()=>{window.open(`https://dev.podkrepi.bg/campaigns/${charity.slug}`)}}><p>→</p></div>
                                     </div>)
                             })}
                         </div>
@@ -154,7 +154,7 @@ export function Sparely({ amount, googleClientId }: props) {
 
                     {showCampaigns &&
                         <div className="callToActionButton">
-                            {showCampaigns && !showDonateAmount && <p className="callToActionText" onClick={() => setShowDonateAmount(true)}>Continue</p>}
+                            {showCampaigns && !showDonateAmount && <p className="callToActionText" onClick={() => {if(selectedCampaignId != null)setShowDonateAmount(true)}}>Continue</p>}
                             {showCampaigns && showDonateAmount && <p className="callToActionText" onClick={() => donate(priceDifference)}>Donate</p>}
                         </div>
                     }

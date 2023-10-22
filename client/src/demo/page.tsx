@@ -1,7 +1,10 @@
-// import "./humge-ui-framework.min.css";
-// import "./iziModal.min.css";
-// import "./lightbox.min.css";
-// import "./main.css";
+import "./humge-ui-framework.min.css";
+import "./iziModal.min.css";
+import "./lightbox.min.css";
+import "./main.css";
+
+import { Sparely } from "../sparely_component/src";
+import React from "react";
 
 export default function DemoPage() {
 	return (
@@ -82,7 +85,10 @@ export default function DemoPage() {
 						<div className="text-right font14 bold mrg-top-20 orange-text">
 							Общо: 67.90 лв.
 						</div>
+
 						<div className="row">
+							<Sparely amount={67.90} successUrl={""} failureUrl={""} googleClientId={"134533434102-4r2keh0b79hl22dkvpqa0k8q2k7mfler.apps.googleusercontent.com"} />
+
 							<div className="col-100 mrg-top-35 text-center">
 								<button className="action orange-button button" id="buy">
 									Поръчай

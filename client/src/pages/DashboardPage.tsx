@@ -42,7 +42,7 @@ export const DashboardPage = () => {
                     <Sparely amount={42.12} successUrl={""} failureUrl={""} firstName={""} lastName={""} email={""} phone={""} googleAuth={false} googleClientId={""} googleClientSecret={""}/>
 
                     <div className="charities-section">
-                        <h1 className="heading">Your donations</h1>
+                        <h1 className="heading">Selected campaigns</h1>
                         <CharityCardsList charities={campaigns} />
                     </div>
                 </main>

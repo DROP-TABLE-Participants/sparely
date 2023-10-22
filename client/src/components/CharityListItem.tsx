@@ -7,7 +7,7 @@ export const CharityListItem = ({charity}: any) => {
     const [isSelected, setIsSelected] = useState(false);
 
     return (
-        <div className={"charity-list-item " + (isSelected ? 'selected' : 'deselected')} onClick={()=>{setIsSelected(!isSelected)}}>
+        <div className={"campaign-list-item " + (isSelected ? 'selected' : 'deselected')} onClick={()=>{setIsSelected(!isSelected)}}>
             <div className="charity-img"><img src={`${charity.logo}`} alt="" /></div>
             <div className="charity-info">
                     <div className="charity-heading">{charity.title}</div>

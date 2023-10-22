@@ -44,15 +44,15 @@
             overflow: hidden;
 
             .selected {
-                background: white;
+                opacity: 100%;
             }
 
             .deselected {
-                background: #f0eae4;
+                opacity: 30%;
             }
             
     
-            .charity-list-item {
+            .campaign-list-item {
                 box-sizing: border-box;
                 padding: 1rem 2rem;
                 width: 100%;

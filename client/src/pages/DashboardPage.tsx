@@ -5,8 +5,6 @@ import '../styles/pages/DashboardPage.scss';
 import {Navigation} from "../components/Navigation";
 import campaignService from "../services/charity-service";
 import paymentsService from "../services/payments-service";
-import { Sparely } from "../sparely_component/src/index.tsx"
-
 
 export const DashboardPage = () => {
     const [campaigns, setCampaigns]:any = useState([]);
@@ -38,9 +36,6 @@ export const DashboardPage = () => {
                     <div className="donation-card-section">
                         <DonatedAmountCard donatedAmount= {donatedAmount} />
                     </div>
-
-                    <Sparely amount={42.12} successUrl={""} failureUrl={""} googleClientId={"134533434102-4r2keh0b79hl22dkvpqa0k8q2k7mfler.apps.googleusercontent.com"} />
-
                     <div className="charities-section">
                         <h1 className="heading">Selected campaigns</h1>
                         <CharityCardsList charities={campaigns} />

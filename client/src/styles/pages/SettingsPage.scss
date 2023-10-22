@@ -77,61 +77,78 @@
 }
 
 .add-payment-popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  
-  .add-payment-popup {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.add-payment-popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
   .heading {
     font-size: 24px;
     margin-bottom: 10px;
   }
-  
-  .close-button {
-    background-color: #B8FF81;
-    color: #000;
-    font-size: 1rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    border: 1px solid #000;
-  }
-  
-  .close-button:hover {
-    background-color: #B8FF81; 
-  }
+}
 
-  .add-payment-popup ul {
-    list-style: none;
-    padding: 0;
+.close-button, .add-button {
+  background-color: #B8FF81;
+  color: #000;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #000;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: #B8FF81;
   }
-  
-  .add-payment-popup li {
-    margin-bottom: 10px;
+}
+
+.add-payment-popup ul {
+  list-style: none;
+  padding: 0;
+}
+
+.add-payment-popup li {
+  margin-bottom: 0.5rem;
+}
+
+.add-payment-popup label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.add-payment-popup input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+.terms-and-conditions {
+  margin-top: 0.5rem;
+
+  p{
+    margin-left: 0.5rem;
   }
-  
-  .add-payment-popup label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .add-payment-popup input[type="radio"] {
-    margin-right: 10px;
-  }
-  
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 2.5rem;
+}

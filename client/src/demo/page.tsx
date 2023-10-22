@@ -75,22 +75,24 @@ export default function DemoPage() {
 								<tr>
 									<td className="text-left">Бисквитки със сусамов тахан</td>
 									<td>1</td>
-									<td>8.90 лв.</td>
-									<td>8.90 лв.</td>
+									<td>8.20 лв.</td>
+									<td>8.20 лв.</td>
 									<td className="text-center"><a className="delete" data-id={77} href="#"><span className="material-icons">close</span></a></td>
 								</tr>
 								</tbody>
 							</table>
 						</div>
 						<div className="text-right font14 bold mrg-top-20 orange-text">
-							Общо: 67.90 лв.
+							Общо: 67.20 лв.
 						</div>
 
-						<div className="row">
-							<Sparely amount={67} successUrl={""} failureUrl={""} googleClientId={"134533434102-4r2keh0b79hl22dkvpqa0k8q2k7mfler.apps.googleusercontent.com"} />
+						<div className="row mrg-top-35">
+							<div className="col-80">
 
-							<div className="col-100 mrg-top-35 text-center">
-								<button className="action orange-button button" id="buy">
+							<Sparely amount={67.20} successUrl={""} failureUrl={""} googleClientId={"134533434102-4r2keh0b79hl22dkvpqa0k8q2k7mfler.apps.googleusercontent.com"} />
+							</div>
+							<div className="col-20 text-center">
+								<button className="action orange-button button h95 w200" id="buy">
 									Поръчай
 								</button>
 							</div>

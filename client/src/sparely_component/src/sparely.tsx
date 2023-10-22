@@ -146,9 +146,9 @@ export function Sparely({ amount, googleClientId }: props) {
                     {showCampaigns && showDonateAmount &&
                         <>
                             <div className="donateAmountContainer">
-                                <p className="donationAmount">{priceDifference}€</p>
+                                <p className="donationAmount">{priceDifference}лв.</p>
                             </div>
-                            <p className="totalAmount">Round up from: {amount}€</p>
+                            <p className="totalAmount">Round up from: {amount}лв.</p>
                         </>
                     }
 

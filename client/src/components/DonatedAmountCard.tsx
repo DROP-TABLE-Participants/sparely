@@ -6,7 +6,7 @@ export const DonatedAmountCard = ({donatedAmount}: any) => {
     return (
         <div className="donated-amount-card">
             <div className="left">
-                <h1 className='amount'>{donatedAmount} лв.</h1>
+                <h1 className='amount'>{donatedAmount} BGN</h1>
                 <p className='sub-heading'>Donated overall</p>
             </div>
                 <img src="/donation-amount-card-detail.svg" alt="" />

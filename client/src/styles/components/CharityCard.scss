@@ -1,4 +1,4 @@
-@import '../imports.scss';
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 
 .charity-card {
     min-width: 21.5rem;
@@ -26,6 +26,18 @@
         }
     }
 
+    h1 {
+        color: #FFF;
+            font-family: "Hanken Grotesk";
+            font-size: 1rem;
+            font-weight: 600;
+            
+            white-space:nowrap; 
+            max-width: 12rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+    }
+
     .info-container {
         position: absolute;
         bottom: 0;
@@ -46,7 +58,7 @@
 
         .charity-heading {
             color: #FFF;
-            font-family: 'Hanken Grotesk';
+            font-family: "Hanken Grotesk";
             font-size: 1rem;
             font-weight: 600;
             

@@ -28,7 +28,7 @@ export const CharitiesPage = () => {
 
                 <Navigation />
 
-                <h1 className="subheading">All charities</h1>
+                <h1 className="subheading">Select charities you wish to donate to</h1>
                 
                 <div className="charities-list-container">
 

@@ -4,7 +4,7 @@ import '../styles/pages/CharitiesPage.scss';
 
 export const CharityListItem = ({charity}: any) => {
 
-    const [isSelected, setIsSelected] = useState(false);
+    const [isSelected, setIsSelected] = useState(true);
 
     return (
         <div className={"campaign-list-item " + (isSelected ? 'selected' : 'deselected')} onClick={()=>{setIsSelected(!isSelected)}}>
